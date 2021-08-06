@@ -40,7 +40,7 @@ class Board:
 
     def _check_range(self, index: int):
         if index >= self._num_fields:
-            raise NumFieldError(_('index param out of range'))
+            raise NumFieldError(_('Index parameter out of range'))
 
     @property
     def num_fields(self):

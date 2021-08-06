@@ -1,0 +1,18 @@
+* Make file locale/kik.pot:
+
+xgettext -d kik -p ./locale -o kik.pot -L Python *.py
+
+* Cerate new transalate:
+
+mkdir -p ll_CC/LC_MESSAGES
+msginit -i locale/kik.pot -l ll_CC.UTF-8 -o ll_CC/LC_MESSAGES/kik.po
+
+when ll_CC is locale name
+
+* Merge existing file *.po:
+
+msgmerge -U locale/pl_PL/LC_MESSAGES/kik.po locale/kik.pot
+
+* Compile file kik.po to binary file kik.mo:
+
+msgfmt locale/ll_CC/LC_MESSAGES/kik.po -o locale/ll_CC/LC_MESSAGES/kik.mo

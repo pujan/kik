@@ -5,21 +5,22 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 11:47+0100\n"
+"POT-Creation-Date: 2021-08-06 12:10+0200\n"
 "PO-Revision-Date: 2021-03-03 15:51+0100\n"
 "Last-Translator: Łukasz A. Pelc <lukasz.pelc.81@gmail.com>\n"
 "Language-Team: Polish\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
 #: board.py:43
-msgid "index param out of range"
+#, fuzzy
+msgid "Index parameter out of range"
 msgstr "Parametr index poza zakresem"
 
 #: kik.py:18
@@ -27,9 +28,9 @@ msgid "Tic Tac Toe version:"
 msgstr "Kółko i Krzyżyk wersja:"
 
 #: kik.py:50
-#, fuzzy
-msgid "Player {} [{}] - enter your name: "
-msgstr "Gracz {} [{}] - podaj swoje imię: "
+#, fuzzy, python-format
+msgid "Player %(number)d [%(symbol)s] - enter your name: "
+msgstr "Gracz %(number)d [%(symbol)s] - podaj swoje imię: "
 
 #: kik.py:61
 msgid "Enter number!"
@@ -64,18 +65,18 @@ msgid "Bye, bye..."
 msgstr "Dowidzenia."
 
 #: kik.py:128
-#, fuzzy
-msgid "{} choice field number [1-9]: "
-msgstr "{} wybierz numer pola [1-9]: "
+#, fuzzy, python-format
+msgid "%(name)s select a field number [1-9]: "
+msgstr "%(name)s wybierz numer pola [1-9]: "
 
 #: kik.py:131
 msgid "Enter number from 1 to 9!"
 msgstr "Podaj liczbę od 1 do 9!"
 
 #: kik.py:135
-#, fuzzy
-msgid "Field number {} is not empty."
-msgstr "Pole {} jest już zajęte."
+#, fuzzy, python-format
+msgid "The field (number %(number)d) is occupied."
+msgstr "Pole numer %(number)d jest już zajęte."
 
 #: kik.py:162
 msgid "Crosses won."

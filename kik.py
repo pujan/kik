@@ -47,7 +47,7 @@ def configure(player1: PlayerType = None, player2: PlayerType = None, debug: boo
 
 
 def enter_name(number: int, symbol: str) -> str:
-    return input(_('Player {} [{}] - enter your name: ').format(number, symbol))
+    return input(_('Player %(number)d [%(symbol)s] - enter your name: ') % {'number': number, 'symbol': symbol})
 
 
 def enter_number(string: str):
@@ -125,14 +125,14 @@ def main():
             current_player = player2
 
         while True and not current_player.ai:
-            choice = enter_number(_('{} choice field number [1-9]: ').format(current_player.name))
+            choice = enter_number(_('%(name)s select a field number [1-9]: ') % {'name': current_player.name})
 
-            if choice < 1 or choice > 9:
+            if not 1 <= choice <= 9:
                 print(_('Enter number from 1 to 9!'))
                 continue
 
             if board[choice - 1] != Field.EMPTY:
-                print(_('Field number {} is not empty.').format(choice))
+                print(_('The field (number %(number)d) is occupied.') % {'number': choice})
                 continue
 
             break
