@@ -2,6 +2,12 @@
 
 Console game Tic Tac Toe with Artificial Intelligence (AI).
 
-## BUGS:
+## Run the game
+
+```bash
+python3 kik.py
+```
+
+## BUGS
 
 - `gettext` not translate strings with brace format.
