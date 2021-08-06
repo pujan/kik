@@ -121,7 +121,6 @@ class TestGame(unittest.TestCase):
 
         self.assertEqual(state_game(self.board), StateGame.WIN_CIRCLE)
 
-
     def test_5_state_game_win_second_column(self):
         '''Win crosses or circles in second column.
         set fields of board 1:

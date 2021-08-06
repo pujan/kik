@@ -1,7 +1,6 @@
 import unittest
 
 from board import NUMBER_FIELDS, Board, Field
-from game import StateGame, state_game
 
 
 class TestBoard(unittest.TestCase):
