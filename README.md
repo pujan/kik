@@ -8,6 +8,3 @@ Console game Tic Tac Toe with Artificial Intelligence (AI).
 python3 kik.py
 ```
 
-## BUGS
-
-- `gettext` not translate strings with brace format.
