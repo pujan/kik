@@ -1,0 +1,19 @@
+[tool.black]
+line-length = 120
+target-version = ["py38"]
+skip-string-normalization = 1
+
+[tool.autopep8]
+max-line-length = 119
+ignore = "W605,W503,W504,C0114,C0115,C0116"
+recursive = 1
+
+[tool.pycodestyle]
+max-line-length = 119
+statistics = true
+count = true
+format = "pylint"
+
+[tool.mypy]
+ignore_missing_imports = true
+
