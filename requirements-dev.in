@@ -1,0 +1,7 @@
+# The input file for requirements pip-tools
+# add packages for your project for developers
+
+pip-tools>=6.6.2
+black>=22.3.0
+flake8>=4.0.1
+mypy>=0.961
