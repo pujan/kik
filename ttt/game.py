@@ -1,7 +1,7 @@
 import socket
 from enum import Enum, auto, unique
 
-from board import Board, Field
+from ttt.board import Board, Field
 
 
 class QuitException(Exception):

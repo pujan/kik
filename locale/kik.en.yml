@@ -1,0 +1,19 @@
+en:
+  version: Tic Tac Toe version
+  enter_name: "Player %(number)d [%(symbol)s] - enter your name"
+  enter_number_err: Enter number!
+  pvp: 1 - player vs player
+  pvc: 2 - player vs computer
+  cvc: 3 - computer vs computer
+  quit: 0 - quit
+  select_game: Select the game type
+  bad_number: Bad number, enter again!
+  farewell: Bye, bye...
+  select_field: "%(name)s select a field number [1-9]"
+  enter_number: Enter number from 1 to 9!
+  field_occupied: "The field (number %(number)d) is occupied."
+  cross_won: Crosses won.
+  circle_won: Circles won.
+  draw: Draw.
+  quit_text: See you later!
+  ai_select: "%(name)s %(xo)s: choice field %(choice)s"

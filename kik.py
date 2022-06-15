@@ -1,21 +1,20 @@
 #!python3
 
-import gettext
 import timeit
 
-from ai import find_best_move
-from board import Board, Field
-from game import ConfigGame, Player, PlayerType, QuitException, StateGame, display_board, state_game
+import ttt.lang as lang
+from ttt.ai import find_best_move
+from ttt.board import Board, Field
+from ttt.game import (ConfigGame, Player, PlayerType, QuitException, StateGame,
+                      display_board, state_game)
 
-gettext.bindtextdomain('kik', 'locale')
-gettext.textdomain('kik')
-_ = gettext.gettext
+_ = lang.i18n.t
 
-__version__ = '1.0'
+__version__ = '1.2'
 
 
 def banner():
-    print(_('Tic Tac Toe version:'), __version__)
+    print(_('kik.version') + ':', __version__)
     print(r'''
          .     .--.     .
        .'|     |__|   .'|
@@ -47,7 +46,7 @@ def configure(player1: PlayerType = None, player2: PlayerType = None, debug: boo
 
 
 def enter_name(number: int, symbol: str) -> str:
-    return input(_('Player %(number)d [%(symbol)s] - enter your name: ') % {'number': number, 'symbol': symbol})
+    return input(_('kik.enter_name') % {'number': number, 'symbol': symbol} + ': ')
 
 
 def enter_number(string: str):
@@ -58,7 +57,7 @@ def enter_number(string: str):
             choice = int(choice)
             break
         except ValueError:
-            print('\n', _('Enter number!'))
+            print('\n' + _('kik.enter_number_err'))
             continue
 
     return choice
@@ -66,17 +65,17 @@ def enter_number(string: str):
 
 def menu():
     options = (0, 1, 2, 3)
-    print(_('1 - player vs player'))
-    print(_('2 - player vs computer'))
-    print(_('3 - computer vs computer'))
-    print(_('0 - quit'))
+    print(_('kik.pvp'))
+    print(_('kik.pvc'))
+    print(_('kik.cvc'))
+    print(_('kik.quit'))
     print()
 
     while True:
-        number = enter_number(_('Select the game type: '))
+        number = enter_number(_('kik.select_game') + ': ')
 
         if number not in options:
-            print(_('Bad number, enter again!'))
+            print(_('kik.bad_number'))
             continue
 
         if number == 1:
@@ -97,7 +96,7 @@ def main():
     try:
         config = menu()
     except QuitException:
-        print(_('Bye, bye...'))
+        print(_('kik.farewell'))
         return
 
     if config.player1 == PlayerType.HUMAN:
@@ -125,14 +124,14 @@ def main():
             current_player = player2
 
         while True and not current_player.ai:
-            choice = enter_number(_('%(name)s select a field number [1-9]: ') % {'name': current_player.name})
+            choice = enter_number(_('kik.select_field') % {'name': current_player.name} + ': ')
 
             if not 1 <= choice <= 9:
-                print(_('Enter number from 1 to 9!'))
+                print(_('kik.enter_number'))
                 continue
 
             if board[choice - 1] != Field.EMPTY:
-                print(_('The field (number %(number)d) is occupied.') % {'number': choice})
+                print(_('kik.field_occupied') % {'number': choice})
                 continue
 
             break
@@ -148,7 +147,7 @@ def main():
 
             choice = find_best_move(board, current_player.type, opponent.type) + 1
 
-            print(f'{current_player.name} {current_player.xo}: choice {choice}')
+            print(_('kik.ai_select') % {'name': current_player.name, 'xo': current_player.xo, 'choice': choice})
 
             config.debug and print(f'Time of turn {turn}:', timeit.default_timer() - start)
 
@@ -159,13 +158,13 @@ def main():
         config.debug and print(f'State game: {state}')
 
         if state == StateGame.WIN_CROSS:
-            print(_('Crosses won.'))
+            print(_('kik.cross_won'))
             break
         elif state == StateGame.WIN_CIRCLE:
-            print(_('Circles won.'))
+            print(_('kik.circle_won'))
             break
         elif state == StateGame.DRAW:
-            print(_('Draw.'))
+            print(_('kik.draw'))
             break
 
         turn += 1
@@ -177,4 +176,4 @@ if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        print('\n', _('See you later!'))
+        print('\n' + _('kik.quit_text'))

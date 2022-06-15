@@ -1,5 +1,5 @@
-from board import Board, Field
-from game import StateGame, state_game
+from ttt.board import Board, Field
+from ttt.game import StateGame, state_game
 
 
 def evaluate(board: Board, player: Field, opponent: Field) -> int:

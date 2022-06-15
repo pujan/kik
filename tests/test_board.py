@@ -1,6 +1,6 @@
 import unittest
 
-from board import NUMBER_FIELDS, Board, Field
+from ttt.board import NUMBER_FIELDS, Board, Field
 
 
 class TestBoard(unittest.TestCase):

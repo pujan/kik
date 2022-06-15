@@ -1,0 +1,19 @@
+pl:
+  version: Kółko i Krzyżyk wersja
+  enter_name: "Gracz %(number)d [%(symbol)s] - podaj swoje imię"
+  enter_number_err: Podaj liczbę!
+  pvp: 1 - gracz kontra gracz
+  pvc: 2 - gracz kontra komputer
+  cvc: 3 - komputer kontra komputer
+  quit: 0 - wyjście
+  select_game: Wybierz rodzaj rozgrywki
+  bad_number: Błędna liczba, wprowadź ponownie!
+  farewell: Do widzenia.
+  select_field: "%(name)s wybierz numer pola [1-9]"
+  enter_number: Podaj liczbę od 1 do 9!
+  field_occupied: "Pole numer %(number)d jest już zajęte."
+  cross_won: Krzyżyki wygrały.
+  circle_won: Kółka wygrały.
+  draw: Remis.
+  quit_text: Do natępnego razu!
+  ai_select: "%(name)s %(xo)s: wybrał pole %(choice)s"

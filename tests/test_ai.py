@@ -1,7 +1,7 @@
 import unittest
 
-from ai import evaluate, find_best_move, minimax
-from board import Board, Field
+from ttt.ai import evaluate, find_best_move, minimax
+from ttt.board import Board, Field
 
 
 class TestAI(unittest.TestCase):

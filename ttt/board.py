@@ -1,9 +1,10 @@
-import gettext
 from enum import Enum, auto, unique
 from itertools import repeat
 from typing import Any, List
 
-_ = gettext.gettext
+import ttt.lang as lang
+
+_ = lang.i18n.t
 
 NUMBER_FIELDS = 9
 
@@ -40,7 +41,7 @@ class Board:
 
     def _check_range(self, index: int):
         if index >= self._num_fields:
-            raise NumFieldError(_('Index parameter out of range'))
+            raise NumFieldError(_('board.index_error'))
 
     @property
     def num_fields(self):
