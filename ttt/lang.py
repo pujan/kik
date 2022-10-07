@@ -7,12 +7,5 @@ from babel import Locale
 LANGS_PATH = Path.cwd() / 'locale'
 
 i18n.load_path.append(str(LANGS_PATH.resolve()))
-
-# HACK GitHub set env LANG = 'C' - crash tests
-lang = os.environ.get('LANG', 'en_US')
-
-if lang.lower() == 'c':
-    lang = 'en_US'
-
-locale = Locale.parse(lang)
+locale = Locale.parse(os.environ.get('LANG', 'en_US'))
 i18n.set('locale', locale.language)

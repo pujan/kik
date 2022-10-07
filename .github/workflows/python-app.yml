@@ -30,5 +30,7 @@ jobs:
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --config flake8.cfg
     - name: Test with unittest
+      env:
+        LANG: en_US
       run: |
         python -m unittest tests/test_game.py tests/test_board.py tests/test_ai.py
