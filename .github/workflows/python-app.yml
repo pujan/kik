@@ -28,7 +28,7 @@ jobs:
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        flake8 . --config flake8.cfg
+        flake8 . --config flake8.conf
     - name: Test with unittest
       env:
         LANG: en_US
